@@ -201,10 +201,12 @@ switch (true) {
 //Introduzione alla manipolazione DOM (Document Object Model)
 //Normalmente va scritto in alto
 
-const colorsList = document.getElementById('colorsList');
+const colorsList = document.querySelector('body ul:nth-child(2)');
 
 for (let i = 0; i < colori.length; i++) {
     colorsList.innerHTML += `<li class="listElement"> ${colori[i]}</li>`;
 }
 
 console.log(colorsList.innerHTML)
+
+//querySelector + usato di getElementById perchè accetta anche selettori css
