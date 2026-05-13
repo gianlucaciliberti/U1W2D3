@@ -207,6 +207,6 @@ for (let i = 0; i < colori.length; i++) {
     colorsList.innerHTML += `<li class="listElement"> ${colori[i]}</li>`;
 }
 
-console.log(colorsList.innerHTML)
+console.log(colorsList.innerHTML);
 
 //querySelector + usato di getElementById perchè accetta anche selettori css
