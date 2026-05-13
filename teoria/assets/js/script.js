@@ -133,3 +133,78 @@ for (let i = 1; i <= 3; i++) {
         console.log(`${i} x ${j} = ${i * j} `);
     }
 }
+
+console.log('**********************************');
+
+//SWITCH/CASE
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let today = 'Thursday';
+switch (today) {
+    case 'Monday':
+        console.log('Oggi è lunedì');
+        break;
+    case 'Tuesday':
+        console.log('Oggi è martedì');
+        break;
+    case 'wednesday':
+        console.log('Oggi è mercoledì');
+        break;
+    case 'Thursday':
+        console.log('Oggi è giovedì');
+        break;
+    case 'Friday':
+        console.log('Oggi è venerdì');
+        break;
+    case 'Saturday':
+        console.log('Oggi è sabato');
+        break;
+    case 'Sunday':
+        console.log('Oggi è domeica');
+        break;
+};
+
+if (today === 'Monday') {
+    console.log('Oggi è lunedì');
+} else if (today === 'Tuesday') {
+    console.log('Oggi è martedì');
+} else if (today === 'wednesday') {
+    console.log('Oggi è mercoledì');
+} else if (today === 'Thursday') {
+    console.log('Oggi è giovedì');
+} else if (today === 'Friday') {
+    console.log('Oggi è veneedì');
+} else if (today === 'Saturday') {
+    console.log('Oggi è sabato');
+} else {
+    console.log('Oggi è domenica');
+}
+
+/* Switch/case e If/else if/else fanno la stessa cosa,
+ma il primo è molto più veloce e preciso.*/
+
+let price = 40;
+switch (true) {
+    case price <= 20:
+        console.log(`il prezzo è ${price}`);
+        break;
+    case price > 20 && price <= 50:
+        console.log(`Il prezzo scontato è ${price - price * 0.1} `);
+        break;
+    case price > 50 && price <= 80:
+        console.log(`Il prezzo scontato è ${price - price * 0.15}`);
+        break;
+    default:
+        console.log(`Il prezzo scontato ${price - price * 0.2}`);
+        break;
+}
+
+//Introduzione alla manipolazione DOM (Document Object Model)
+//Normalmente va scritto in alto
+
+const colorsList = document.getElementById('colorsList');
+
+for (let i = 0; i < colori.length; i++) {
+    colorsList.innerHTML += `<li class="listElement"> ${colori[i]}</li>`;
+}
+
+console.log(colorsList.innerHTML)
