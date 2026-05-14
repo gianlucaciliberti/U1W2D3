@@ -189,7 +189,7 @@ console.log(perColoreOcchi);
 let i = 0;
 let massaTotale = 0;
 
-while (i <starWarsCharacters.length) {
+while (i < starWarsCharacters.length) {
 	massaTotale += Number(starWarsCharacters[i].mass); // Number converte stringhe in numeri
 	//+= incrementa, come avessi scritto massaTotale=massaTotale+starWars[i].mass
 	i++
@@ -206,14 +206,35 @@ console.log(`Massa totale= ${massaTotale} kg`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+switch (true) {
+	case massaTotale < 500:
+		console.log('Carico leggero');
+		break;
+	case massaTotale >= 500 && massaTotale < 700:
+		console.log('Carico medio');
+		break;
+	case massaTotale >= 700 && massaTotale < 900:
+		console.log('Attenzione: oltre 700');
+		break;
+	case massaTotale >= 900 && massaTotale < 1000:
+		console.log('Carico critico');
+		break;
+	default:
+		console.log('Pericolo');
+		break;
+}
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
    Stampa l'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if (starWarsCharacters[i].gender === 'n/a') {
+		starWarsCharacters[i].gender = 'robot'
+	}
+}
+console.table(starWarsCharacters)
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
    L'altezza è una stringa: convertila con Number().
@@ -221,7 +242,18 @@ console.log(`Massa totale= ${massaTotale} kg`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let alto = starWarsCharacters[0];
+let basso = starWarsCharacters[0];
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if (Number(starWarsCharacters[i].height) > Number(alto.height)) {
+		alto = starWarsCharacters[i];
+	}
+	if (Number(starWarsCharacters[i].height) < Number(basso.height)) {
+		basso = starWarsCharacters[i];
+	}
+}
+console.log(`Più alto è ${alto.name}: ${alto.height} cm.`)
+console.log (`Più basso è ${basso.name} : ${basso.height} cm.`)
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
    Quando combaciano per nome, rimuovi quel nome da nomi con splice.
@@ -229,6 +261,15 @@ console.log(`Massa totale= ${massaTotale} kg`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log (`Lunghezza prima: ${nomi.length}`);
+for (let i = 0; i < nomi.length; i++) {
+	for (let j = 0; j < personaggiFemminili.length; j++) {
+		if (nomi[i] === personaggiFemminili[j].name) {
+			nomi.splice(i, 1);
+		}
+	}
+}
+console.log(`Lunghezza dopo: ${nomi.length}`)
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
@@ -245,3 +286,6 @@ console.log(`Massa totale= ${massaTotale} kg`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (const colore in perColoreOcchi) {
+	console.log (`${colore}: ${perColoreOcchi[colore].length} personaggi.`)
+}
